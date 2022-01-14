@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17EC34F0-1909-44A1-869B-FA4C6608A6FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SqlStitcher.Forms</RootNamespace>
+    <AssemblyName>SqlStitcher.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>needle.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="App.cs" />
+    <Compile Include="AppStart\ContainerConfig.cs" />
+    <Compile Include="AppStart\ViewCatalogConfig.cs" />
+    <Compile Include="Contracts\IApp.cs" />
+    <Compile Include="Contracts\IClipboarder.cs" />
+    <Compile Include="Contracts\IMessenger.cs" />
+    <Compile Include="Contracts\IRecentFileList.cs" />
+    <Compile Include="Contracts\IScriptSource.cs" />
+    <Compile Include="Contracts\ISettings.cs" />
+    <Compile Include="Contracts\IViewCatalog.cs" />
+    <Compile Include="Contracts\IProjectState.cs" />
+    <Compile Include="Custom\DirectoryTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom\DraggableListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\ControlExtensions.cs" />
+    <Compile Include="Helpers\FlaggedState.cs" />
+    <Compile Include="Helpers\ListExtensions.cs" />
+    <Compile Include="Helpers\Utilities.cs" />
+    <Compile Include="Helpers\ViewExtensions.cs" />
+    <Compile Include="Infrastructure\Binder.cs" />
+    <Compile Include="Infrastructure\Clipboarder.cs" />
+    <Compile Include="Infrastructure\FormSizer.cs" />
+    <Compile Include="Infrastructure\Messenger.cs" />
+    <Compile Include="Infrastructure\RecentFileList.cs" />
+    <Compile Include="Infrastructure\Settings.cs" />
+    <Compile Include="Infrastructure\ValueConverters\CheckStateConverter.cs" />
+    <Compile Include="Infrastructure\ValueConverters\EnumValueConverter.cs" />
+    <Compile Include="Infrastructure\ValueConverters\IntegerToStringConverter.cs" />
+    <Compile Include="Messages\OpenRecentProjectMessage.cs" />
+    <Compile Include="Messages\RecentFileListChangedMessage.cs" />
+    <Compile Include="Messages\RefreshScriptMessage.cs" />
+    <Compile Include="Messages\SendProjectScriptToClipboardMessage.cs" />
+    <Compile Include="Messages\ShowIdentifiersMessage.cs" />
+    <Compile Include="Messages\ViewProjectScriptMessage.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\OptionsGeneralViewModel.cs" />
+    <Compile Include="ViewModels\OptionsStitchingViewModel.cs" />
+    <Compile Include="ViewModels\OptionsViewModel.cs" />
+    <Compile Include="ViewModels\ProjectIdentifiersViewModel.cs" />
+    <Compile Include="ViewModels\ProjectOverviewViewModel.cs" />
+    <Compile Include="ViewModels\ScriptViewModel.cs" />
+    <Compile Include="Views\AboutViewModel.cs" />
+    <Compile Include="Views\FAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FAbout.Designer.cs">
+      <DependentUpon>FAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FMain.Designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contracts\IView.cs" />
+    <Compile Include="Infrastructure\BaseViewModel.cs" />
+    <Compile Include="Infrastructure\ViewCatalog.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\NewProjectViewModel.cs" />
+    <Compile Include="Views\FNewProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FNewProject.Designer.cs">
+      <DependentUpon>FNewProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FOptions.Designer.cs">
+      <DependentUpon>FOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FProjectIdentifiers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FProjectIdentifiers.Designer.cs">
+      <DependentUpon>FProjectIdentifiers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FScript.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FScript.Designer.cs">
+      <DependentUpon>FScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Identifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Identifier.Designer.cs">
+      <DependentUpon>Identifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionsGeneral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OptionsGeneral.Designer.cs">
+      <DependentUpon>OptionsGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionsStitching.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OptionsStitching.Designer.cs">
+      <DependentUpon>OptionsStitching.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ProjectOverview.Designer.cs">
+      <DependentUpon>ProjectOverview.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\FAbout.resx">
+      <DependentUpon>FAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FNewProject.resx">
+      <DependentUpon>FNewProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FOptions.resx">
+      <DependentUpon>FOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FProjectIdentifiers.resx">
+      <DependentUpon>FProjectIdentifiers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FScript.resx">
+      <DependentUpon>FScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Identifier.resx">
+      <DependentUpon>Identifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OptionsGeneral.resx">
+      <DependentUpon>OptionsGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OptionsStitching.resx">
+      <DependentUpon>OptionsStitching.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProjectOverview.resx">
+      <DependentUpon>ProjectOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Needle.pdn" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SqlStitcher\SqlStitcher.csproj">
+      <Project>{e00019be-82b3-4c66-8d04-390c8c22cd34}</Project>
+      <Name>SqlStitcher</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="needle.ico" />
+    <Content Include="needle_white.ico" />
+    <Content Include="Resources\file.ico" />
+    <Content Include="Resources\File.png" />
+    <Content Include="Resources\folderclosed.ico" />
+    <Content Include="Resources\FolderClosed.png" />
+    <Content Include="Resources\folderopen.ico" />
+    <Content Include="Resources\FolderOpen.png" />
+    <Content Include="Resources\needle.ico" />
+    <Content Include="Resources\Needle.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

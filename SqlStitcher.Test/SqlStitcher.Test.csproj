@@ -1,0 +1,1112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75312CF3-DD73-43F9-9064-864C51F9E18E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SqlStitcher.Test</RootNamespace>
+    <AssemblyName>SqlStitcher.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Helpers">
+      <HintPath>..\packages\JSMunroe-Helpers.1.0.0-alpha00079\lib\Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.7.8\lib\net45\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="..\Common\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="App\DirectoryAggregatorTests.cs" />
+    <Compile Include="App\Helpers\XmlHelpersTests.cs" />
+    <Compile Include="App\Models\ScriptBatchTests.cs" />
+    <Compile Include="App\Models\ScriptEntryTests.cs" />
+    <Compile Include="App\Models\ScriptIdentifierTests.cs" />
+    <Compile Include="App\Models\ProjectTests.cs" />
+    <Compile Include="Forms\Helpers\ListExtensionsTests.cs" />
+    <Compile Include="Forms\Helpers\UtilitiesTests.cs" />
+    <Compile Include="Forms\Helpers\ViewExtensionsTest.cs" />
+    <Compile Include="Forms\Infrastructure\MessengerTests.cs" />
+    <Compile Include="Forms\Infrastructure\RecentFileListTests.cs" />
+    <Compile Include="IntegrationTests.cs" />
+    <Compile Include="MockContainerFactory.cs" />
+    <Compile Include="SetupAssemblyInitializer.cs" />
+    <Compile Include="Forms\Infrastructure\ViewCatalogTests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App\ScriptBuilderTests.cs" />
+    <Compile Include="TestState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SqlStitcher.Forms\SqlStitcher.Forms.csproj">
+      <Project>{17EC34F0-1909-44A1-869B-FA4C6608A6FF}</Project>
+      <Name>SqlStitcher.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SqlStitcher\SqlStitcher.csproj">
+      <Project>{e00019be-82b3-4c66-8d04-390c8c22cd34}</Project>
+      <Name>SqlStitcher</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Files\Scripts\Master\Views\AutomobileClaimInjuredView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Master\Views\AutomobileClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Master\Views\ClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Master\Views\ClaimWitnessView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Master\Views\GeneralLiabilityClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Master\Views\PropertyLossClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Master\Views\WorkersCompensationClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.0.0.0\10_SchemaAndData\100_Create_Tables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.0.0.0\10_SchemaAndData\10_Create_Schema.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.0.0.0\10_SchemaAndData\200_Insert_Initial_SeedData.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.0.0.0\10_SchemaAndData\300_Create_Views.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.0.0.0\10_SchemaAndData\400_Insert_SecurityHub_SeedData.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.0.0.0\10_SchemaAndData\999999_Drop_Tables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\100_CarrierToImportTemplate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\110_ClaimImportField.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\120_ClaimImportQueue.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\130_ClientToExportTemplate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\140_ExportTemplate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\150_ExportTemplateMapping.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\160_ExportTemplateToLineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\170_ImportTemplate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\180_ImportTemplateClaimStatusTypeTranslation.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\190_ImportTemplateLineOfCoverageTypeTranslation.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\200_ImportTemplateStateTypeTranslation.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\210_ImportTemplateTranslatorType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\220_StateTypeToExportTemplate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\230_ImportTemplateClaimStatusTypeTranslation_Data.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\240_ImportTemplateLineOfCoverageTypeTranslation_Data.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\250_ImportTemplateTranslatorType_Data.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.1.0.0\10_SchemaAndData\260_ImportTemplateStateTypeTranslation_Data.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0000.Disable_All_Triggers.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0100_Create_Schema_Person.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0120_Alter_Table_MaritalStatusType_Change_Schema_To_Person.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0130_Alter_Table_AutomobileInsured_Alter_FK_AutomobileLoss_AutomobilesInsured.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0140_Create_Table_WitnessType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0150_Create_Table_Witness.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0160_Create_Schema_Application.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0200_Create_Table_PayRateFrequencyType_And_WorkScheduleType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0210_Create_Table_GenderType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0220_Create_Table_ApplicationType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0240_Create_Table_WorkersCompensationBodyPartType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0250_Create_Table_WorkersCompensationInjuryCategoryType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0260_Create_Table_WorkersCompensationInjuryType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0300_Insert_Data_Table_InjuryCategoryType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0310_Insert_Data_Table_WorkersCompensationInjuryType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0320_Insert_Data_Table_WorkersCompensationBodyPartType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0330_Insert_Data_Table_LineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0340_Update_Data_Table_LineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0350_Create_Table_WorkersCompensationEmploymentType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0360_Create_Table_WorkersCompensationClassificationCode.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0370_Create_Table_PolicyLineToWorkersCompensationClassificationCode.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0380_Create_Table_WorkersCompensationPolicy.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0400_Create_Table_ClientSite.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0410_Create_Table_ClientLocation.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0420_Create_Table_ClientBuilding.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0430_Create_Table_ClientDepartment.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0440_Create_Table_PolicyToClientLocation.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0500_Create_Table_PropertyPolicy.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0510_Create_Table_Loss.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0520_Alter_Table_AutomobileInsured_Add_AutomobileLossId_ForeignKey.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0530_Create_Table_GeneralLiabilityPolicy.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0540_Create_Table_PropertyLossInsuredType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0600_Create_Table_PropertyClaim.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0610_Create_Table_PropertyLoss.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0615_Create_Table_GeneralLiabilityLossType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0620_Create_Table_GeneralLiabilityClaim.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0630_Create_Table_GeneralLiabilityLoss.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0640_Create_Table_GeneralLiabilityClaimLossInjured.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0645_Create_Table_GeneralLiabilityPropertyDamagedType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0650_Create_Table_GeneralLiabilityClaimLossPropertyDamaged.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0660_Create_Table_GeneralLiabilityPremisesInsuredType_And_GeneralLiabilityProductInsuredType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0670_Create_Table_GeneralLiabilityLossPremises_And_GeneralLiabilityLossProduct.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0700_Alter_Tables_ClientServicingTeam_User_Producer.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0710_Create_Table_Person.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0715_Create_Table_PracticingPartnerUser.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0720_Insert_Data_Table_Person.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0730_Update_Data_Tables_ClientServicingTeam_User_PersonId.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0740_Delete_Data_From_Table_Email.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0750_Drop_Columns_User.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0760_Drop_Foreign_Key_UserId.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0770_Drop_Add_Foreign_Key_Table_Producer_ClientServicingTeamType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0780_Drop_Columns_UserId_Cleanup.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0800_Create_Table_CarrierContactJobClassificationType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0810_Create_Table_CarrierContact.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0820_Drop_Table_ClaimAdjustor.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0830_Create_Table_Claim_Amount.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0840_Alter_Table_Claim.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0900_Apply_Person_To_ClientContact.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0910_Create_Table_JournalEntryEmailRecipient.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0920_Insert_Data_ClaimSubmissionType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\0930_Drop_Columns_Survey.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\1000_Create_Table_ClientDepartment.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\1010_Create_Table_WorkersCompensationClaim.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2010_Alter_Table_Claim.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2030_Drop_Columns_CarrierCommunicationProfile.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2040_Add_Column_CarrierCommunicationProfile.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2050_Create_Table_WorkersCompensationLossOfWork.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2060_Create_Table_ClaimDataTransferQueue.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2070_Insert_Data_Table_ClaimStatusType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2100_Create_Table_Site.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2200_Alter_Table_SurveyQuestion.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2210_Create_Table_SurveyQuestionChoiceItemToTriggerRuleType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2230_Create_Table_SurveyQuestionCategoryType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2235_Create_Table_SurveyQuestionImportHeaderType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2240_Create_Table_SurveyQuestionToSurveyQuestionCategoryType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2245_Alter_Table_Survey.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2250_Create_Table_ClaimToClientSurvey.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2260_Create_Table_ClaimSurveyResponse.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2270_Alter_Table_SurveyQuestionToLineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2280_Alter_Table_SurveySection.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\2300_Create_Table_ClientLocation.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\3000_Create_Table_PropertyLossType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\4000_Update_Insert_Table_TriggerRule_TriggerRuleType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\5000_Create_Table_WorkersCompensationClassificationCodeMapping.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\5010_Insert_Default_Data_Table_WorkersCompensationClassificationCode.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\5020_Insert_Data_Table_WorkersCompensationClassificationCode.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\5100_Insert_Default_Data_Table_WorkersCompensationClassificationCodeMapping.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6100_Create_Table_ClientLocationGroup.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6200_Create_Table_ClientLocationGroupToClientLocation.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6300_Create_Table_ClientLocationGroupToClientUser.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6500_Create_Table_ClaimImportCommitRejectionReasonType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6600_Insert_Default_Data_ClaimImportCommitRejectionReasonType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6650_Insert_Data_ClaimImportRowCommitType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6700_Alter_Table_ClaimImportRow.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6710_Alter_Table_TemplateFieldType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6720_Insert_Default_Data_TemplateFieldType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6730_Insert_Data_ExportTemplateDocumentType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6740_Create_Table_ExportTemplateDocumentTypeToLineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6750_Insert_Data_ExportTemplateDocumentTypeToLineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6760_Alter_Table_ImportTemplate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6770_Drop_Table_SurveyInstanceLockType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6780_Drop_Table_SurveyInstanceValidationDueDateSelectionType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6790_Insert_Data_ClaimToClientSurvey.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6800_Insert_Data_TriggerRuleType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6810_Insert_Data_TriggerRule.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6900_Alter_Update_Table_WorkersCompensationLossInjured.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6910_Update_Data_Tables_Claim_LineOfCoverageId.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6930_Alter_Table_ExportTemplateMapping_Add_SourceFieldName.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6935_Rename_Table_PolicyToClientLocation.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6940_Alter_Table_Loss_Add_Column_PolicyToClientLocationId.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6940_Alter_Update_Table_Claim_Loss_IsLocationInList.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6950_Alter_Table_TemplateFieldToLineOfCoverageType_Rename_Column_TemplateFieldId.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6960_Insert_Date_TemplateFieldToLineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6970_Delete_Data_SurveyToLineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6975_Update_Data_ExportTemplateMapping.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\6980_Insert_Data_ExportTemplateMapping_.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7000_Alter_Table_ImportTemplateMapping.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7010_Delete_Data_CarrierImportTemplate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7020_Alter_Claim_Table_Add_Column_IsLegacyClaim.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7020_Alter_Table_WorkersCompensationLossOfWork_Add_HoursWorked.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7030_Alter_Table_Carrier_Add_Communication_Profile_Type.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7040_Alter_Table_AutomobilePolicyDriver.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7050_Alter_Table_AutomobilePolicyVehicle.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7060_Alter_Table_CarrierCommunicationProfileToPolicy.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7070_Insert_Data_LineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7080_Alter_Table_AutomobileInsured.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7080_Remove_Data_PaidLoss_From_TemplateFieldType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7081_Purge_Table_AutomobileInsured.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\7090_Add_ImportTemplateLineOfCoverageTypeTranslations.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\10_SchemaAndData\999999_Create Views.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\20_SchemaAndData_SecurityHub\1000_Insert_Data_Permission.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\20_SchemaAndData_SecurityHub\1010_Insert_Carrier_Link_Permission.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\20_SchemaAndData_SecurityHub\1020_Insert_Client_Sections_Permission.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\0100_CREATE Migration Database and Tables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\0200_Populate Migration Bodyparts-ClassCodes-Type Tables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\0300_Populate Migration XML form field table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\0400 ONE TIME ONLY_INSERT RiskServices Export Template.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\0500_BY COMPANY - Populate Company-User-Policy-Dept-Address Info.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\0600_BY COMPANY INSERT RiskServices Claims.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\0700 BY COMPANY INSERT RiskServices JE-Attachment-ClaimReview.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\0800 BY COMPANY INSERT RiskServices Root Cause-Red Flag-Question-Answers.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\0900_BY COMPANY INSERT RiskServices Client Specific Export Template.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.2.0.0\30_ClaimsPortal_Migration\1000 ONE TIME ONLY_INSERT RiskServices Export Template Mapping.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.3.0.0\01_SchemaAndData_RiskServicesAudit\0000_Use_Database.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.3.0.0\01_SchemaAndData_RiskServicesAudit\0100_CreateAndLoad_ClientToLineOfCoverageTypeTable.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.3.0.0\01_SchemaAndData_RiskServicesAudit\0200_ALTER_AutomobileInsured_Add_Column.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.3.0.0\10_SchemaAndData\0000_Use_Database.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.3.0.0\10_SchemaAndData\0100_Run_In_Production_Only_Delete_CNLI_Policies.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.3.0.0\10_SchemaAndData\1000_Create_ClientExternalProfileTables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.3.0.0\10_SchemaAndData\1001_CreateAndLoad_ClientToLineOfCoverageTypeTable.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.3.0.0\10_SchemaAndData\2000_ALTER_AutomobileInsured_Add_Column.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.3.0.0\10_SchemaAndData\3000_Delete_Data_ClientToAgencyToBranch.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\01_SchemaAndData_RiskServicesAudit\0000_Use_Database.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\01_SchemaAndData_RiskServicesAudit\1000_Alter_Table_Carrier_Add_UsesDataTransfer.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\01_SchemaAndData_RiskServicesAudit\1010_Alter_Table_Survey_Add_MessageText.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\01_SchemaAndData_RiskServicesAudit\2200_Alter_Table_WorkersCompensationLoss_Add_CountyTypeId.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\0000_Use_Database.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\0100_Create_Schemas.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\1000_Alter_Table_Carrier_Add_UsesDataTransfer.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\1010_Alter_Table_Survey_Add_MessageText.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2000_Create_Table_CountyType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2100_Insert_Data_Table_CountyType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2200_Alter_Table_WorkersCompensationLoss_Add_CountyTypeId.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2300_Update_Data_Table_WorkersCompensationLoss.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2400_Alter_View_WorkersCompensationClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2500_Update_ExportTemplateMapping_ClaimDateSubmittedToCarrier.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2600_Create_ClaimsPortal_Company_Stats_Query.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2600_Create_LMS_Org_Stats_Query.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2600_Update_LineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2700_Update_ExportTemplateDocumentType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2750_Insert_ExportTemplateDocumentTypeToLineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2800_Create_Table_ReportType_And_Insert_Record.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\2900_Create_CompanyRiskScoreTrendAuditHistory.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3000_Create_ spGetCalendarOfService.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3050_Create_GetSurveySectionAverageScore.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3100_Create_spGetCompanyRiskScoreStatistics.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3150_Create_ spGetLineOfCoverage.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3200_Create_spGetSurveyInstance.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3250_Create_prGetClientPolicies.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3300_Create_prGetClientProducer.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3350_Create_spGetClientServicingTeam.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3400_Create_spGetSurveySectionAverageScore.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3500_Drop_ExternalClientCache.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3600_Create_View_ExternalClientCache.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\10_SchemaAndData\3700_Insert_ClientExternalProfileType_RiskScore.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\20_SchemaAndData_SecurityHub\0000_Use_Database.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.4.0.0\20_SchemaAndData_SecurityHub\1000_Create_Permissions.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.5.0.0\10_SchemaAndData\1000_Alter_Table_Claim_Add_ShouldIncludeAttachmentsInEmailSubmission.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.5.0.0\10_SchemaAndData\1100_Alter_Table_StateType_Add_ShouldDisplay.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.5.0.0\10_SchemaAndData\1200_Update_ClientToLineOfCoverageType_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.5.0.0\10_SchemaAndData\1300_Alter_Table_ClientSurvey_Add_IsActive.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.5.0.0\10_SchemaAndData\1400_Update_ClaimAmounts_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.6.0.0\10_SchemaAndData\1000_Alter_Table_AutomobileInsured_Adjust_Field_Size.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.6.0.0\10_SchemaAndData\2000.Insert_Into_TemplateFieldToLineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.6.0.0\10_SchemaAndData\2010.Insert_Into_TemplateFieldType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.6.0.0\10_SchemaAndData\2020_Delete_Unneeded_TemplateFieldType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.6.0.0\10_SchemaAndData\3000_Add_Multiple_Polices_Found_Commit_Type.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1000_Create_ImportTemplateBooleanTranslation.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1010_Add_Multiple_Polices_Found_Commit_Type.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1020_Add_GARA_and_OCC1_Line_Of_Coverage_Types_To_Translations.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1030_Alter_Table_ClaimImportField_Add_OriginalData.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1040_DropAndCreateGetCompanyRiskScoreStatistics.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1050_DropAndCreatespGetSurveySectionAverageScore.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1060_DropAndCreateGetCompanyRiskScoreTrendAuditHistory.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1070_Insert_New_Validators.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1080_Alter_Export_Template_Drop_OriginalFileName.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.7.0.0\10_SchemaAndData\1090_Insert_ClaimImportIgnoreType_45.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\10_SchemaAndData\1000_Alter_Table_JournalEntryNote.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\10_SchemaAndData\2000_Alter_Table_CarrierCommunicationProfile.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\10_SchemaAndData\3000_Add_Columns_SurveySectionToQuestion.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\10_SchemaAndData\3010_SurveySectionToQuestionMigration.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\10_SchemaAndData\3020_Drop_Columns_From_SurveyQuestion.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\10_SchemaAndData\3030_Drop_Coluns_From_Audit_SurveyQuestion_.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\10_SchemaAndData\4000_Create_Table_ClaimImportQueueDeleteReasonType_and_Fill.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\10_SchemaAndData\4010_Create_Table_ClaimImportQueue_to_add_ClaimImportQueueDeleteReasonTypeId.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\10_SchemaAndData\5000_Alter_Table_JournalEntryAttachment_Add_DateAttached.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\0100_CREATE Migration Database and Tables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\0200_Populate Migration Bodyparts-ClassCodes-Type Tables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\0300_Populate Migration XML form field table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\0400 ONE TIME ONLY_INSERT RiskServices Export Template.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\0500_BY COMPANY - Populate Company-User-Policy-Dept-Address Info.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\0600_BY COMPANY INSERT RiskServices Claims.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\0700 BY COMPANY INSERT RiskServices JE-Attachment-ClaimReview.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\0800 BY COMPANY INSERT RiskServices Root Cause-Red Flag-Question-Answers.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\0900_BY COMPANY INSERT RiskServices Client Specific Export Template.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.0.0\30_ClaimsPortal_Migration\1000 ONE TIME ONLY_INSERT RiskServices Export Template Mapping.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.1.0\10_SchemaAndData\1000_Create_TriggerRuleType_Ordinal_and_Populate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.1.0\10_SchemaAndData\1010_Drop_TriggerRule_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.1.0\10_SchemaAndData\2000_Removed_JSON_ReaderType_Record.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.1.0\10_SchemaAndData\3000_Drop_Column_DatabaseSourceCode.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.1.0\10_SchemaAndData\3100_Drop_Column_DatabaseSourceCode_Audit.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release1\Release1.8.1.0\10_SchemaAndData\3200_Update_Data_ExternalProducerId.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.0.0.0\10_SchemaAndData\1000_Update_Data_ExportTemplate_IsDeleted.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.0.0.0\10_SchemaAndData\2000_Insert_Data_WorkersCompensationClassificationCode.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.0.0.0\10_SchemaAndData\2100_Insert_Data_WorkersCompensationClassificationCodeMapping.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\1000_Create_Table_ClaimInsuranceType_and_Populate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\1100_Add_Column_ClaimInsuranceTypeId_to_Claim.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\1200_Insert_Insurance_Type_into_TemplateFieldType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\1300_Create_Table_ImportTemplateInsuranceTypeTranslator.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\1400_Add_Column_ClaimInsuranceTypeId_to_ClaimImportTable.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\1500_Insert_ExistingClaimNoInsuranceType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\1600_CREATE_VIEW_WorkersCompensationOshaClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\1700_INSERT_OSHA_ReportType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\1800_INSERT_OSHA_ClientToReportType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\2100_CREATE_TABLE_ClientReportTypeExecution.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\2200_CREATE_TABLE_AuditHistory_ClientReportTypeExecution.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\2300_CREATE_TRIGGER_ClientReportTypeExecution.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\3000_Delete_ContingentLiability_From_ExportTemplateDocumentTypeToLineOfCoverageType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\4000_Alter_AutomobilePolicyView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\10_SchemaAndData\4100_Insert_Data_WorkersCompensatioClassificationCode.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\20_SecurityHub\1000_Insert_Claims_Detail_Insurance_Type.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\20_SecurityHub\1900_INSERT OSHA SecurityHub Permission and Permission Assignment records.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.1.0.0\20_SecurityHub\2000_INSERT OSHA Permission and ItemFilterAssignment records.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.2.0.0\10_SchemaAndData\1000_Add_InjuryExtentType_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.2.0.0\10_SchemaAndData\1100_Rename_ExtentOfInjuryDescription_to_OtherInjuryExtent_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.2.0.0\10_SchemaAndData\1200_Add_InjuryExtentType_Column.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.2.0.0\10_SchemaAndData\1300_Repair_AutomobileClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.2.0.0\10_SchemaAndData\1400_Add_InjuryExtent_Column_to_GeneralLiabilityLossInjured.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.2.0.0\10_SchemaAndData\1500_Repair_GeneralLiabilityClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.2.0.0\10_SchemaAndData\CreateMissingClaimLossRecords.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.2.0.0\10_SchemaAndData\RemoveDuplicateLossRecords.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.3.0.0\10_SchemaAndData\1000_Add_CreatedDate_to_ImportTemplate_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.3.0.0\10_SchemaAndData\2000_Add_Table_ExportTemplateRule.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.3.0.0\10_SchemaAndData\3000_Insert_ExportTemplateRule.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.3.0.0\10_SchemaAndData\4000_Set_Default_FROI.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.3.0.0\10_SchemaAndData\5000_Alter_AutomobileClaimInjuredView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.3.0.0\10_SchemaAndData\5100_Alter_AutomobileClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.3.0.0\10_SchemaAndData\6000_Add_SocialSecurityNumber_to_WorkersCompensationLossInjured.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.3.0.0\10_SchemaAndData\6100_Alter_WorkersCompensationClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.3.0.0\IOA.RiskServices_Release_Sql_Script.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\05_Audit\2040_Add_ClientLocationId_Column_to_Loss_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2000_Rename_ClientLocationGroup_to_ClientGroup.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2010_Create_ClientGroupType_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2020_Add_Permission_Columns_to_ClientGroup.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2020_Create_ClientGroupToLineOfCoverageType_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2030_Create_ClientGroupToLineOfCoverage_and_ClientGroupToPolicyLine_Tables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2030_Create_ClientGroupToPolicyLine_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2040_Add_ClientLocationId_Column_to_Loss_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2050_Alter_View_WorkersCompensationoshaClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2060_Add_IsClientGroupEnabled_Column_To_Client_Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2070_Alter_View_PropertyLossClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2080_Alter_View_WorkersCompensationClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\10_SchemaAndData\2090_Add_Missing_Claimants.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\20_SecurityHub\1000_Insert_Permission_and_PermissionAssignment_for_Client_Groups.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\20_SecurityHub\2000_Insert_Permission_and_PermissionAssignment_for_Enable_Groups.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.4.0.0\IOA.RiskServices_Release_Sql_Script.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.5.0.0\10_SchemaAndData\1000_Alter_ClaimWitnessView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.5.0.0\10_SchemaAndData\1100_Alter_ClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.5.0.0\10_SchemaAndData\1200_Alter_GeneralLiabilityClaimView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Scripts\Release2\Release2.5.0.0\20_SecurityHub\1000_Insert_Claims_Detail_Update_Entry_For_Producer.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

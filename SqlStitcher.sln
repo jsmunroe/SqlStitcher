@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlStitcher", "SqlStitcher\SqlStitcher.csproj", "{E00019BE-82B3-4C66-8D04-390C8C22CD34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlStitcher.Test", "SqlStitcher.Test\SqlStitcher.Test.csproj", "{75312CF3-DD73-43F9-9064-864C51F9E18E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlStitcher.Forms", "SqlStitcher.Forms\SqlStitcher.Forms.csproj", "{17EC34F0-1909-44A1-869B-FA4C6608A6FF}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jsmunroe.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SqlStitcher\\SqlStitcher.csproj
+		SccProjectName1 = SqlStitcher
+		SccLocalPath1 = SqlStitcher
+		SccProjectUniqueName2 = SqlStitcher.Test\\SqlStitcher.Test.csproj
+		SccProjectName2 = SqlStitcher.Test
+		SccLocalPath2 = SqlStitcher.Test
+		SccProjectUniqueName3 = SqlStitcher.Forms\\SqlStitcher.Forms.csproj
+		SccProjectName3 = SqlStitcher.Forms
+		SccLocalPath3 = SqlStitcher.Forms
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E00019BE-82B3-4C66-8D04-390C8C22CD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E00019BE-82B3-4C66-8D04-390C8C22CD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E00019BE-82B3-4C66-8D04-390C8C22CD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E00019BE-82B3-4C66-8D04-390C8C22CD34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75312CF3-DD73-43F9-9064-864C51F9E18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75312CF3-DD73-43F9-9064-864C51F9E18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75312CF3-DD73-43F9-9064-864C51F9E18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75312CF3-DD73-43F9-9064-864C51F9E18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17EC34F0-1909-44A1-869B-FA4C6608A6FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17EC34F0-1909-44A1-869B-FA4C6608A6FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17EC34F0-1909-44A1-869B-FA4C6608A6FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17EC34F0-1909-44A1-869B-FA4C6608A6FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
